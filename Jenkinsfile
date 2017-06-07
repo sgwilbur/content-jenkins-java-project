@@ -15,8 +15,8 @@ pipeline  {
         label 'master'
        }
       steps {
-         sh "cp dist/rectangle_${env.BUILD_NUMBER}.jar /var/lib/jenkins/buildFiles"
-         sh "scp dist/rectangle_${env.BUILD_NUMBER}.jar jenkins@10.150.160.29:/home/jenkins/rectangle_${env.BUILD_NUMBER}.jar"
+         sh "cp /var/lib/jenkins/workspace/MyMultiBranchJavaProject/rectangle_${env.BUILD_NUMBER}.jar /var/lib/jenkins/buildFiles"
+         sh "scp /var/lib/jenkins/workspace/MyMultiBranchJavaProject/rectangle_${env.BUILD_NUMBER}.jar jenkins@10.150.160.29:/home/jenkins/rectangle_${env.BUILD_NUMBER}.jar"
         }
      }
     stage ('Unit Test') {
