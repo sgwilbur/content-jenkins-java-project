@@ -10,6 +10,14 @@ pipeline  {
         sh 'ant -f build.xml -v'
         }
     }
+    stage ('envNames'){
+      agent {
+         label 'master'
+       }
+      steps {
+        sh "env"
+      }
+    }
     stage ('deploy') {
       agent {
         label 'master'
