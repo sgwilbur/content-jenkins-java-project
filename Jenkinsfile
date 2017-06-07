@@ -40,6 +40,9 @@ pipeline  {
       agent {
         label 'master'
         }
+        when {
+          branch 'development'
+        }
       steps {
         sh "cp -rf /var/lib/jenkins/buildFiles/rectangle_${env.BUILD_NUMBER}.jar /var/lib/jenkins/buildFiles/green/rectangle_${env.BUILD_NUMBER}.jar"
        }
