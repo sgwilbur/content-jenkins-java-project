@@ -16,7 +16,7 @@ pipeline  {
           label 'master'
         }
         steps {
-          git url: 'https://github.com/nick363501/content-jenkins-java-project/', branch: 'development'
+          checkout scm
         }
     }
 
