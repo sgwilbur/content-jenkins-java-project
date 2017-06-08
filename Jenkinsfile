@@ -23,8 +23,8 @@ pipeline  {
         label 'master'
        }
       steps {
-         sh "cp /var/lib/jenkins/workspace/${env.JOB_NAME}/rectangle_${env.BUILD_NUMBER}.jar /var/lib/jenkins/buildFiles"
-         sh "scp /var/lib/jenkins/workspace/${env.JOB_NAME}/rectangle_${env.BUILD_NUMBER}.jar jenkins@10.150.160.29:/home/jenkins/rectangle_${env.BUILD_NUMBER}.jar"
+         sh "cp ${env.WORKSPACE}/dist/rectangle_${env.BUILD_NUMBER}.jar /var/lib/jenkins/buildFiles"
+         sh "scp ${env.WORKSPACE}/dist//rectangle_${env.BUILD_NUMBER}.jar jenkins@10.150.160.29:/home/jenkins/rectangle_${env.BUILD_NUMBER}.jar"
         }
      }
     stage ('Unit Test') {
